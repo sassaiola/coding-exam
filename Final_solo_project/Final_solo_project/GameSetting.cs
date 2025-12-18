@@ -1,0 +1,19 @@
+﻿using Microsoft.Xna.Framework.Graphics;
+
+namespace Final_solo_project
+{
+    internal static class GameSetting
+    {
+        public static int WindowWidth { get; set; }
+        public static int WindowHeight { get; set; }
+        public static GraphicsDevice GraphicsDevice { get; set; }
+
+        // ⭐ "Screen manager" vero e proprio:
+        public static Screen StartScreen { get; set; }
+        public static Screen PlayScreen { get; set; }
+        public static Screen EndScreen { get; set; }
+
+        public static Screen ActiveScreen { get; set; }
+    }
+}
+
