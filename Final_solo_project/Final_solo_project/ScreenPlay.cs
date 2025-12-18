@@ -123,60 +123,23 @@ namespace Final_solo_project
             doodler.IsOnPlatform = false;
             debugCollisions = 0;
 
-
             elapsedSeconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            // if (doodler.TopLeftPosition.Y < highestPointY)
-            //{
-            //    //float increment = highestPointY - doodler.TopLeftPosition.Y ;
-            //    score += -delta;
-            //    highestPointY = doodler.TopLeftPosition.Y;
-            //
-            //}
-            foreach (var platform in platforms) 
-            { 
+            // aggiorna piattaforme (ok come prima)
+            foreach (var platform in platforms)
                 platform.Update(gameTime);
-            }
 
-            // foreach (var platform in platforms)
-            // {
-            //     //if (doodler.IsFalling && doodler.IsCollidingWith(platform))
-            //     //{
-            //     //    doodler.IsOnPlatform = true;
-            //     //
-            //     //    float jump = doodler.JumpSpeed * platform.JumpMultiplier;
-            //     //
-            //     //    doodler.Velocity = new Vector2(doodler.Velocity.X, -jump);
-            //     //
-            //     //    platform.OnPlayerLanding(doodler);
-            //     //
-            //     //}
-            //     float doodlerBottom = doodler.TopLeftPosition.Y + doodler.Size.Y;
-            //     float platformTop = platform.TopLeftPosition.Y;
-            //
-            //   bool landingFromAbove = doodlerBottom <= platformTop + doodler.Velocity.Y + 1f;
-            //
-            //     if (doodler.IsFalling && doodler.IsCollidingWith(platform)  && landingFromAbove)
-            //     {
-            //         // 1) snap sopra la piattaforma (così smetti di intersecare)
-            //         doodler.TopLeftPosition = new Vector2(
-            //             doodler.TopLeftPosition.X,
-            //              doodler.Size.Y
-            //         );
-            //
-            //         // 2) applica salto
-            //         float jump = doodler.JumpSpeed * platform.JumpMultiplier;
-            //         doodler.Velocity = new Vector2(doodler.Velocity.X, -jump);
-            //
-            //         platform.OnPlayerLanding(doodler);
-            //     }
-            //
-            //
-            //
-            // }
+            // salva bottom del frame precedente
             float previousBottom = doodler.TopLeftPosition.Y + doodler.Size.Y;
+
+            // muovi il doodler (gravità + input + posizione)
+            doodler.Update(gameTime);
+
+            // landing check (dopo che si è mosso)
             foreach (var platform in platforms)
             {
+                if (doodler.IsCollidingWith(platform)) debugCollisions++;
+
                 float platformTop = platform.TopLeftPosition.Y;
                 float currentBottom = doodler.TopLeftPosition.Y + doodler.Size.Y;
 
@@ -187,7 +150,9 @@ namespace Final_solo_project
 
                 if (crossedTopWhileFalling && doodler.IsCollidingWith(platform))
                 {
-                    // snap sopra
+                    doodler.IsOnPlatform = true;
+
+                    // snap sopra la piattaforma
                     doodler.TopLeftPosition = new Vector2(
                         doodler.TopLeftPosition.X,
                         platformTop - doodler.Size.Y
@@ -199,16 +164,14 @@ namespace Final_solo_project
                     doodler.Velocity = new Vector2(doodler.Velocity.X, -jump);
 
                     platform.OnPlayerLanding(doodler);
-                    if (doodler.IsCollidingWith(platform)) debugCollisions++;
-
-                    break; // importantissimo: evita doppi trigger nello stesso frame
+                    break;
                 }
             }
 
 
 
 
-            doodler.Update(gameTime);
+
 
 
             float scrollThreshold = GameSetting.WindowHeight * 0.6f;

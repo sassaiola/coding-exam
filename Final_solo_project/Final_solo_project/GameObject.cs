@@ -43,31 +43,39 @@ namespace Final_solo_project
         public bool IsCollidingWith(GameObject other)
         {
             Rectangle rect1 = new Rectangle(
-     (int)(TopLeftPosition.X + HitboxOffset.X),
-     (int)(TopLeftPosition.Y + HitboxOffset.Y),
-     (int)HitboxSize.X,
-     (int)HitboxSize.Y);
+                (int)(TopLeftPosition.X + HitboxOffset.X),
+                (int)(TopLeftPosition.Y + HitboxOffset.Y),
+                (int)HitboxSize.X,
+                (int)HitboxSize.Y
+            );
 
             Rectangle rect2 = new Rectangle(
-    (int)(TopLeftPosition.X + HitboxOffset.X),
-    (int)(TopLeftPosition.Y + HitboxOffset.Y),
-    (int)other.HitboxSize.X,
-    (int)other.HitboxSize.Y
-);
+                (int)(other.TopLeftPosition.X + other.HitboxOffset.X),
+                (int)(other.TopLeftPosition.Y + other.HitboxOffset.Y),
+                (int)other.HitboxSize.X,
+                (int)other.HitboxSize.Y
+            );
 
             return rect1.Intersects(rect2);
-
         }
+
+
+
 
         public GameObject(SpriteSheet visualization)
         {
             Visualization = visualization;
 
-            TopLeftPosition= visualization.TopLeftPosition;
+            TopLeftPosition = visualization.TopLeftPosition;
             Size = visualization.Size;
+
+            HitboxOffset = Vector2.Zero;
+            HitboxSize = Size;
+
             Velocity = Vector2.Zero;
             IsActive = true;
         }
+
         public virtual void MoveGameObject()
         {
             TopLeftPosition += Velocity;
