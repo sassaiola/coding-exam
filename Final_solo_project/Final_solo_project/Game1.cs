@@ -54,10 +54,25 @@ namespace Final_solo_project
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            GameSetting.WindowWidth = GraphicsDevice.Viewport.Width;
+            GameSetting.WindowHeight = GraphicsDevice.Viewport.Height;
+            GameSetting.GraphicsDevice = GraphicsDevice;
+
+            // crea screens
+            GameSetting.StartScreen = new StartScreen();
+            GameSetting.PlayScreen = new ScreenPlay();
+            GameSetting.EndScreen = new EndScreen();
+
+            // carica content per OGNI screen
             GameSetting.StartScreen.LoadContent(Content);
             GameSetting.PlayScreen.LoadContent(Content);
             GameSetting.EndScreen.LoadContent(Content);
+
+            // ✅ set iniziale
+            GameSetting.ActiveScreen = GameSetting.StartScreen;
+            GameSetting.ActiveScreen.Initialize();
         }
+
 
 
         protected override void Update(GameTime gameTime)
@@ -78,11 +93,14 @@ namespace Final_solo_project
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            GameSetting.ActiveScreen.Draw(_spriteBatch);
+
+            GameSetting.ActiveScreen?.Draw(_spriteBatch); // ✅ evita crash se per sbaglio è null
+
             _spriteBatch.End();
 
             base.Draw(gameTime);
         }
+
 
 
     }

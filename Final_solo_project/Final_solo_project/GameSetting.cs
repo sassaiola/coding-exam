@@ -14,6 +14,17 @@ namespace Final_solo_project
         public static Screen EndScreen { get; set; }
 
         public static Screen ActiveScreen { get; set; }
+
+        public static int LastScore { get; set; }
+        public static bool LastRunWasHighScore { get; set; }
+        public static int HighScore { get; set; }
+        public static bool LastScoreQualifiesTop10 { get; set; }
+
+
+
+
+
+
     }
 }
 

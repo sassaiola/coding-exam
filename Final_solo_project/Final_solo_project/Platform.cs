@@ -18,7 +18,16 @@ namespace Final_solo_project
     internal abstract class PlatformBase : GameObject
     {
         public float JumpMultiplier { get; set; } = 1f;
+        public bool HasAttachment { get; set; } = false;
+
         public PlatformType Type { get; protected set; }
+
+        public override bool IsOutOfBounds
+        {
+            get { return false; }
+        }
+
+
 
         public PlatformBase(SpriteSheet visualization, PlatformType type)
             : base(visualization)
@@ -30,5 +39,7 @@ namespace Final_solo_project
         {
             // per ora vuoto — lo riempiranno le classi figlie
         }
+        
+
     }
 }

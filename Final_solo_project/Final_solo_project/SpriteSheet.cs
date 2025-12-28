@@ -2,39 +2,52 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final_solo_project
 {
     internal class SpriteSheet
     {
+        public Texture2D Texture { get; set; }
 
-        public Texture2D Texture {  get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public Vector2 TopLeftPosition { get; set; }
-        public Vector2 Size {  get; set; }
+        public Vector2 Size { get; set; }
         public int SpriteIndex { get; set; }
-
-        public float Rotation { get; set; }
-        public float RotationSpeed { get; set; }
 
         public int CropX { get; set; } = 0;
         public int CropY { get; set; } = 0;
 
-        public Vector2 SpriteSize 
+        // ✅ rettangoli sorgente precomputati (opzionale)
+        private Rectangle[] _customSourceRects;
+
+        public float Rotation { get; set; }
+        public float RotationSpeed { get; set; }
+
+        public virtual void Update(GameTime gameTime)
         {
-            get
-            {
-                if (Texture == null || Rows <= 0 || Columns <= 0)
-                    return Vector2.Zero;
-                else return new Vector2(
-                    Texture.Width / (float)Columns, Texture.Height / (float)Rows
-                    );
-            }
+            Rotation += RotationSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
+
+        public SpriteSheet(Texture2D texture, int rows, int columns, Vector2 topLeftPosition, Vector2 size)
+        {
+            Texture = texture;
+            Rows = rows;
+            Columns = columns;
+            TopLeftPosition = topLeftPosition;
+            Size = size;
+            SpriteIndex = 0;
+        }
+
+
+        private int ClampIndex(int idx)
+        {
+            int max = Rows * Columns - 1;
+            if (idx < 0) return 0;
+            if (idx > max) return max;
+            return idx;
+        }
+
         public Rectangle SourceRectangle
         {
             get
@@ -42,77 +55,155 @@ namespace Final_solo_project
                 if (Texture == null || Rows <= 0 || Columns <= 0)
                     return Rectangle.Empty;
 
-                int spriteWidth = (int)SpriteSize.X;
-                int spriteHeight = (int)SpriteSize.Y;
+                int idx = ClampIndex(SpriteIndex);
 
-                // Calcolo riga e colonna a partire da SpriteIndex
-                int row = SpriteIndex / Columns;
-                int column = SpriteIndex % Columns;
+                // ✅ se abbiamo rect custom, usali
+                if (_customSourceRects != null && idx < _customSourceRects.Length)
+                    return _customSourceRects[idx];
 
-                int x = column * spriteWidth;
-                int y = row * spriteHeight;
+                // fallback “classico”
+                int frameW = Texture.Width / Columns;
+                int frameH = Texture.Height / Rows;
 
-                return new Rectangle( x + CropX,y + CropY,spriteWidth - 2 * CropX,spriteHeight - 2 * CropY);
+                int row = idx / Columns;
+                int col = idx % Columns;
 
+                int x = col * frameW;
+                int y = row * frameH;
+
+                int srcX = x + CropX;
+                int srcY = y + CropY;
+
+                int srcW = frameW - 2 * CropX;
+                int srcH = frameH - 2 * CropY;
+
+                if (srcW < 1) srcW = 1;
+                if (srcH < 1) srcH = 1;
+
+                if (srcX + srcW > Texture.Width) srcW = Texture.Width - srcX;
+                if (srcY + srcH > Texture.Height) srcH = Texture.Height - srcY;
+
+                return new Rectangle(srcX, srcY, srcW, srcH);
             }
         }
-        public Rectangle DestinationRectangle
+
+        public Rectangle DestinationRectangle =>
+            new Rectangle((int)TopLeftPosition.X, (int)TopLeftPosition.Y, (int)Size.X, (int)Size.Y);
+
+        public void BuildNormalizedTightSourceRects(byte alphaThreshold = 10, int padding = 1)
         {
-            get
-            {
-                return new Rectangle(
-                    (int)TopLeftPosition.X,
-                    (int)TopLeftPosition.Y,
-                    (int)Size.X,
-                    (int)Size.Y
-                );
-            }
-        }
-        public Vector2 Origin
-        {
-            get
-            {
-                return new Vector2(
-                    DestinationRectangle.Width / 2f,
-                    DestinationRectangle.Height / 2f
-                );
-            }
-        }
+            if (Texture == null || Rows <= 0 || Columns <= 0) return;
 
+            int frameW = Texture.Width / Columns;
+            int frameH = Texture.Height / Rows;
 
-        public SpriteSheet(Texture2D texture, int rows, int column, Vector2 topLeftPosition,
-                        Vector2 size)
+            var data = new Color[Texture.Width * Texture.Height];
+            Texture.GetData(data);
+
+            int totalFrames = Rows * Columns;
+            var tight = new Rectangle[totalFrames];
+
+            int globalW = 1;
+            int globalH = 1;
+
+            for (int i = 0; i < totalFrames; i++)
+            {
+                int row = i / Columns;
+                int col = i % Columns;
+
+                int fx = col * frameW;
+                int fy = row * frameH;
+
+                int minX = frameW, minY = frameH, maxX = -1, maxY = -1;
+
+                for (int y = 0; y < frameH; y++)
+                {
+                    for (int x = 0; x < frameW; x++)
                     {
-                        this.Texture = texture;
-                        Rows = rows;
-                        Columns = column;
-                        TopLeftPosition = topLeftPosition;
-                        Size = size;
-                        SpriteIndex = 0;
+                        int px = fx + x;
+                        int py = fy + y;
+                        Color c = data[py * Texture.Width + px];
 
-
+                        if (c.A > alphaThreshold)
+                        {
+                            if (x < minX) minX = x;
+                            if (y < minY) minY = y;
+                            if (x > maxX) maxX = x;
+                            if (y > maxY) maxY = y;
+                        }
                     }
-        public virtual void Update(GameTime gameTime)
-        {
-            // Aggiorna la rotazione in base alla RotationSpeed (radianti al secondo)
-            Rotation += RotationSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
+
+                // se frame vuoto per qualche motivo → usa tutto il frame
+                if (maxX < 0 || maxY < 0)
+                {
+                    tight[i] = new Rectangle(fx, fy, frameW, frameH);
+                }
+                else
+                {
+                    minX = Math.Max(0, minX - padding);
+                    minY = Math.Max(0, minY - padding);
+                    maxX = Math.Min(frameW - 1, maxX + padding);
+                    maxY = Math.Min(frameH - 1, maxY + padding);
+
+                    int w = (maxX - minX) + 1;
+                    int h = (maxY - minY) + 1;
+
+                    globalW = Math.Max(globalW, w);
+                    globalH = Math.Max(globalH, h);
+
+                    tight[i] = new Rectangle(fx + minX, fy + minY, w, h);
+                }
+            }
+
+            // ✅ normalizzazione: forza tutti i rect ad avere la stessa (globalW/globalH),
+            // centrando il tight rect e clampando dentro al frame
+            var normalized = new Rectangle[totalFrames];
+
+            for (int i = 0; i < totalFrames; i++)
+            {
+                int row = i / Columns;
+                int col = i % Columns;
+
+                int fx = col * frameW;
+                int fy = row * frameH;
+
+                Rectangle t = tight[i];
+
+                // centro del tight rect
+                int cx = t.X + t.Width / 2;
+                int cy = t.Y + t.Height / 2;
+
+                int x = cx - globalW / 2;
+                int y = cy - globalH / 2;
+
+                // clamp dentro frame
+                int minFrameX = fx;
+                int minFrameY = fy;
+                int maxFrameX = fx + frameW - globalW;
+                int maxFrameY = fy + frameH - globalH;
+
+                if (maxFrameX < minFrameX) maxFrameX = minFrameX;
+                if (maxFrameY < minFrameY) maxFrameY = minFrameY;
+
+                x = Math.Clamp(x, minFrameX, maxFrameX);
+                y = Math.Clamp(y, minFrameY, maxFrameY);
+
+                normalized[i] = new Rectangle(x, y, globalW, globalH);
+            }
+
+            _customSourceRects = normalized;
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (Texture == null)
-                return;
+            if (Texture == null) return;
 
             spriteBatch.Draw(
-    Texture,
-    destinationRectangle: DestinationRectangle,
-    sourceRectangle: SourceRectangle,
-    color: Color.White,
-    rotation: 0f,
-    origin: Vector2.Zero,
-    effects: SpriteEffects.None,
-    layerDepth: 0f
-
+                Texture,
+                destinationRectangle: DestinationRectangle,
+                sourceRectangle: SourceRectangle,
+                color: Color.White
             );
         }
     }

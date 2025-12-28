@@ -4,10 +4,54 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/giorg/Desktop/CoDING/Final_solo_project/Final_solo_project/Content/fonts/UIFont2.spritefont</File>
-    <File>C:/Users/giorg/Desktop/CoDING/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/Zorroverde.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_breaking_platfprm.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_breaking_platfprm2.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_game_over.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_ipersalto.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_jump.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_kill_enemy_melee.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_kill_enemy_ranged.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_Trap.wav</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/fonts/UIFont2.spritefont</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/2.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/breakable_platform.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/bullet_2.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/bullet_3.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/bullet_4.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/bullet.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/cloud_shape2_2.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/double_jump.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/enemy.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/hyperjump.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/platform_base.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/SpriteSheet_Attack.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/trap.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/Upper_Sfondo.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/Zorroverde.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

@@ -10,7 +10,7 @@ namespace Final_solo_project
     {
         public DoubleJumpPlatform (SpriteSheet visualization):base (visualization, PlatformType.Moving)
         {
-            JumpMultiplier = 1.8f;
+            JumpMultiplier = 2.2f;
         }
     }
 }
