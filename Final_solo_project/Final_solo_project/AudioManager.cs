@@ -109,5 +109,13 @@ namespace Final_solo_project
 
         public static void PlayGameOver()
             => PlaySfx(sfxGameOver, GameOverVolume, GameOverPitch, GameOverPan);
+public static void DebugPing()
+        {
+            System.Diagnostics.Debug.WriteLine($"SfxEnabled={SfxEnabled}");
+            System.Diagnostics.Debug.WriteLine($"jump={(sfxJump != null)} iper={(sfxIperJump != null)} trap={(sfxTrap != null)}");
+            System.Diagnostics.Debug.WriteLine($"melee={(sfxEnemyKillMelee != null)} ranged={(sfxEnemyKillRanged != null)} break={(sfxBreakingPlatform != null)} over={(sfxGameOver != null)}");
+        }
     }
 }
+
+

@@ -192,13 +192,15 @@ namespace Final_solo_project
             var list = (top10 != null) ? top10 : LeaderboardManager.LoadTop10();
 
             float y = panelPos.Y + 60;
+
             for (int i = 0; i < 10; i++)
             {
                 string line;
                 if (i < list.Count)
                 {
                     string name = string.IsNullOrWhiteSpace(list[i].Name) ? "PLAYER" : list[i].Name;
-                    line = $"{i + 1}. {name}  -  {list[i].Score}";
+                    string date = string.IsNullOrWhiteSpace(list[i].Date) ? "" : $" ({list[i].Date})";
+                    line = $"{i + 1}. {name}  -  {list[i].Score}{date}";
                 }
                 else
                 {

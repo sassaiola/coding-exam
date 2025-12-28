@@ -1005,8 +1005,19 @@ namespace Final_solo_project
                     t.Draw(spriteBatch);
 
             // HUD
-            spriteBatch.DrawString(font, $"Score: {(int)(score + killScore)}", new Vector2(10, 10), Color.White);
-            spriteBatch.DrawString(font, $"Time: {(int)elapsedSeconds}", new Vector2(10, 30), Color.White);
+            // UI
+            int totalSeconds = (int)elapsedSeconds;
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+
+            spriteBatch.DrawString(font, $"Time: {minutes:00}:{seconds:00}", new Vector2(10, 30), Color.White);
+
+            // ✅ Kills (se killScore è 250 per kill)
+            spriteBatch.DrawString(font, $"Kills: {killScore / 250}", new Vector2(10, 50), Color.White);
+
+            int totalScore = (int)score + killScore;
+            spriteBatch.DrawString(font, $"Score: {totalScore}", new Vector2(10, 10), Color.White);
+
         }
 
 

@@ -26,52 +26,44 @@ namespace Final_solo_project
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 1200;
             _graphics.ApplyChanges();
+
             GameSetting.WindowWidth = _graphics.PreferredBackBufferWidth;
             GameSetting.WindowHeight = _graphics.PreferredBackBufferHeight;
             GameSetting.GraphicsDevice = GraphicsDevice;
-
 
             _startScreen = new StartScreen();
             _playScreen = new ScreenPlay();
             _endScreen = new EndScreen();
 
-
             GameSetting.StartScreen = _startScreen;
             GameSetting.PlayScreen = _playScreen;
             GameSetting.EndScreen = _endScreen;
 
-            UserInput.Update();
-
-
-            GameSetting.ActiveScreen = GameSetting.StartScreen;  
-
+            GameSetting.ActiveScreen = GameSetting.StartScreen;
             GameSetting.ActiveScreen.Initialize();
 
             base.Initialize();
         }
 
+
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            // se vuoi, puoi tenere questi aggiornamenti viewport
             GameSetting.WindowWidth = GraphicsDevice.Viewport.Width;
             GameSetting.WindowHeight = GraphicsDevice.Viewport.Height;
             GameSetting.GraphicsDevice = GraphicsDevice;
 
-            // crea screens
-            GameSetting.StartScreen = new StartScreen();
-            GameSetting.PlayScreen = new ScreenPlay();
-            GameSetting.EndScreen = new EndScreen();
+            // ✅ CARICA AUDIO QUI (una sola volta)
+            AudioManager.LoadContent(Content);
 
-            // carica content per OGNI screen
+            // ✅ carica content per le screen già create in Initialize
             GameSetting.StartScreen.LoadContent(Content);
             GameSetting.PlayScreen.LoadContent(Content);
             GameSetting.EndScreen.LoadContent(Content);
-
-            // ✅ set iniziale
-            GameSetting.ActiveScreen = GameSetting.StartScreen;
-            GameSetting.ActiveScreen.Initialize();
         }
+
 
 
 
