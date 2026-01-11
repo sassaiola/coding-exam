@@ -6,16 +6,14 @@ namespace Final_solo_project
     {
         public int KillScore { get; } = 250;
 
-        // animazione 2x2 = 4 frame
         private float animTimer;
-        private const float FrameTime = 0.12f; // velocità animazione (tunable)
+        private const float FrameTime = 0.12f; 
         private const int TotalFrames = 4;
 
         public Enemy(SpriteSheet visualization) : base(visualization)
         {
             Velocity = Vector2.Zero;
 
-            // se vuoi: assicurati che parta dal frame 0
             Visualization.SpriteIndex = 0;
         }
 
@@ -33,7 +31,6 @@ namespace Final_solo_project
                     Visualization.SpriteIndex = 0;
             }
 
-            // aggiorna rotazioni ecc. se le usi (nel tuo SpriteSheet.Update cambia rotation)
             Visualization.Update(gameTime);
         }
 

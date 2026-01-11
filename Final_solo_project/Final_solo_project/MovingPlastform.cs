@@ -11,13 +11,12 @@ namespace Final_solo_project
             : base(visualization, PlatformType.Moving)
         {
             this.speed = speed;
-            Velocity = new Vector2(speed, 0f); // si muove solo in X
+            Velocity = new Vector2(speed, 0f); 
             JumpMultiplier = 1.5f;
         }
 
         public override void MoveGameObject()
         {
-            // usa la logica base (TopLeftPosition += Velocity e sync Visualization)
             base.MoveGameObject();
 
             // rimbalzo sui bordi schermo
@@ -32,7 +31,7 @@ namespace Final_solo_project
                 Velocity = new Vector2(-Math.Abs(Velocity.X), 0f);
             }
 
-            // importantissimo: dopo aver corretto TopLeftPosition, risincronizza la visualization
+            // risincronizza la visualization
             Visualization.TopLeftPosition = TopLeftPosition;
         }
     }

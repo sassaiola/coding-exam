@@ -12,7 +12,7 @@ namespace Final_solo_project
             ParentPlatform = parentPlatform;
 
             HitboxOffset = Vector2.Zero;
-            HitboxSize = visualization.Size; // ✅ hitbox corretta
+            HitboxSize = visualization.Size; 
         }
 
         public void SnapToPlatformTop()

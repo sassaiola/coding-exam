@@ -18,7 +18,7 @@ namespace Final_solo_project
         public int CropX { get; set; } = 0;
         public int CropY { get; set; } = 0;
 
-        // ✅ rettangoli sorgente precomputati (opzionale)
+
         private Rectangle[] _customSourceRects;
 
         public float Rotation { get; set; }
@@ -57,11 +57,9 @@ namespace Final_solo_project
 
                 int idx = ClampIndex(SpriteIndex);
 
-                // ✅ se abbiamo rect custom, usali
                 if (_customSourceRects != null && idx < _customSourceRects.Length)
                     return _customSourceRects[idx];
 
-                // fallback “classico”
                 int frameW = Texture.Width / Columns;
                 int frameH = Texture.Height / Rows;
 
@@ -134,7 +132,6 @@ namespace Final_solo_project
                     }
                 }
 
-                // se frame vuoto per qualche motivo → usa tutto il frame
                 if (maxX < 0 || maxY < 0)
                 {
                     tight[i] = new Rectangle(fx, fy, frameW, frameH);
@@ -156,8 +153,6 @@ namespace Final_solo_project
                 }
             }
 
-            // ✅ normalizzazione: forza tutti i rect ad avere la stessa (globalW/globalH),
-            // centrando il tight rect e clampando dentro al frame
             var normalized = new Rectangle[totalFrames];
 
             for (int i = 0; i < totalFrames; i++)

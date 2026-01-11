@@ -7,7 +7,7 @@ namespace Final_solo_project
     {
         private const string FileName = "highscore.txt";
 
-        // Percorso sicuro (scrivibile) per Windows
+        // Percorso sicuro  per Windows
         private static string FolderPath =>
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                          "Final_solo_project");
@@ -31,7 +31,7 @@ namespace Final_solo_project
             }
             catch
             {
-                // Se succede qualsiasi problema di I/O, non vogliamo crashare il gioco
+
                 return 0;
             }
         }
@@ -54,7 +54,7 @@ namespace Final_solo_project
             }
             catch
             {
-                // Ignora errori di I/O per non rompere l’esperienza di gioco
+
             }
         }
     }

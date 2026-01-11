@@ -6,7 +6,6 @@ namespace Final_solo_project
     {
         public Bullet(SpriteSheet visualization, float speedY = 14f) : base(visualization)
         {
-            // sale verso l'alto (Y negativa)
             Velocity = new Vector2(0f, -speedY);
 
             HitboxOffset = Vector2.Zero;

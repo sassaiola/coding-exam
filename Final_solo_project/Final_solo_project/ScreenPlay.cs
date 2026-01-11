@@ -66,9 +66,9 @@ namespace Final_solo_project
         private const float ShootCooldown = 0.18f;
 
         // ✅ Attack “pre-collision” contro enemy
-        private const float EnemyAttackPreTriggerPx = 20f;   // parte ~20px prima
+        private const float EnemyAttackPreTriggerPx = 20f;  
         private float enemyAttackCueCooldownTimer;
-        private const float EnemyAttackCueCooldown = 0.18f;  // evita restart continui dell’animazione
+        private const float EnemyAttackCueCooldown = 0.18f; 
 
         public override void Initialize()
         {
@@ -193,7 +193,7 @@ namespace Final_solo_project
 
         private void CreateBullet()
         {
-            // ✅ bullet "circa largo quanto doodler"
+            //  bullet size
             float w = doodler.Size.X * 1.25f;   // puoi alzare/abbassare
             float h = w * 0.5f;                // sottile (tunable)
 
@@ -214,7 +214,7 @@ namespace Final_solo_project
 
             var b = new Bullet(bulletSprite, speedY: 16f);
 
-            // ✅ importantissimo: hitbox = size del bullet (collisione corretta)
+            //   hitbox size
             b.HitboxOffset = Vector2.Zero;
             b.HitboxSize = bulletSprite.Size;
 
@@ -255,7 +255,7 @@ namespace Final_solo_project
                 var attackSheet = new SpriteSheet(
      attackTexture,
      rows: 1,
-     columns: 3,                 // ✅ 3 frame
+     columns: 3,                 
      topLeftPosition: doodler.TopLeftPosition,
      size: doodler.Size
  );
@@ -263,13 +263,11 @@ namespace Final_solo_project
                 attackSheet.CropX = 0;
                 attackSheet.CropY = 0;
 
-                // ✅ QUESTO È IL FIX: uniforma i frame in modo che non cambino “altezza percepita”
                 attackSheet.BuildNormalizedTightSourceRects(alphaThreshold: 10, padding: 1);
 
                 doodler.SetAttackSprite(attackSheet, totalFrames: 3);
 
 
-                // Consiglio: per questa sheet metti crop a 0 finché non sei sicuro
                 attackSheet.CropX = 0;
                 attackSheet.CropY = 0;
 
@@ -304,7 +302,6 @@ namespace Final_solo_project
             {
                 float y = GameSetting.WindowHeight - i * verticalStep;
 
-                // X calcolata su dimensione "standard" (va bene, poi correggiamo se serve)
                 float x = FindNonOverlappingX(
                     y,
                     PlatformWidth,
@@ -327,16 +324,16 @@ namespace Final_solo_project
                 if (isMoving)
                 {
                     texToUse = movingPlatformTexture ?? platformBaseTexture ?? pixel;
-                    sizeToUse = new Vector2(190f, 46f); // ✅ cloud
+                    sizeToUse = new Vector2(190f, 46f); 
                 }
                 else if (isBreakable)
                 {
                     texToUse = breakablePlatformTexture ?? platformBaseTexture ?? pixel;
-                    sizeToUse = new Vector2(PlatformWidth, PlatformHeight); // ✅ NON ingrandire
+                    sizeToUse = new Vector2(PlatformWidth, PlatformHeight); 
                 }
 
 
-                // (opzionale ma consigliato) ricentra X se la size è più grande della base
+                // ricentra X se la size è più grande della base
                 x = MathHelper.Clamp(
                     x,
                     0,
@@ -436,7 +433,7 @@ namespace Final_solo_project
             HandleLanding(prevDoodlerBox, currDoodlerBox);
             HandleJumpBoostCollisions(prevDoodlerBox, currDoodlerBox);
 
-            // ✅ pre-trigger attack “un attimo prima” di attraversare il nemico da sotto
+            // ✅ pre-trigger attack 
             CueAttackBeforeEnemyPass(prevDoodlerBox, currDoodlerBox);
 
             HandleEnemyCollisions(prevDoodlerBox, currDoodlerBox);
@@ -446,7 +443,7 @@ namespace Final_solo_project
 
             ResolveMovingPlatformOverlaps();
             HandleScrollAndScore();
-            RecyclePlatforms(); // ✅ UNA SOLA VOLTA
+            RecyclePlatforms(); 
 
             if (!doodler.IsActive)
             {
@@ -464,7 +461,6 @@ namespace Final_solo_project
             doodler.UpdateAnimation(gameTime);
         }
 
-        // ✅ Parte ~20px prima di attraversare il bottom del nemico (solo mentre sali)
         private void CueAttackBeforeEnemyPass(Rectangle prev, Rectangle curr)
         {
             if (enemyAttackCueCooldownTimer > 0f) return;
@@ -481,8 +477,7 @@ namespace Final_solo_project
                 bool overlapX = curr.Right > eb.Left && curr.Left < eb.Right;
                 if (!overlapX) continue;
 
-                // quando il top del doodler è "entro 20px" dal bottom del nemico (prima del contatto reale)
-                // prev.Top >= eb.Bottom + 20  e curr.Top <= eb.Bottom + 20  => attraversamento della soglia anticipata
+                //entro 20px dal bottom del nemico (prima del contatto reale)
                 float triggerY = eb.Bottom + EnemyAttackPreTriggerPx;
 
                 bool crossedPreTrigger =
@@ -516,7 +511,7 @@ namespace Final_solo_project
 
                         killScore += e.KillScore;
 
-                        // 🔊 melee quando uccidi davvero
+                        //audio melee quando uccidi davvero
                         AudioManager.PlayEnemyKillTop();
 
                         break;
@@ -527,7 +522,7 @@ namespace Final_solo_project
 
         private void CreateEnemyAtY(float y)
         {
-            float w = 69f;  // dimensione a schermo (tunable)
+            float w = 69f;  // dimensione a schermo 
             float h = 69f;
 
             float x = FindNonOverlappingEnemyX(y, w, h);
@@ -540,13 +535,12 @@ namespace Final_solo_project
                 size: new Vector2(w, h)
             );
 
-            // se serve crop (di solito no). Lascia 0 finché non vedi problemi.
             enemySprite.CropX = 0;
             enemySprite.CropY = 0;
 
             var enemy = new Enemy(enemySprite);
 
-            // hitbox coerente con lo sprite a schermo
+            // hitbox con lo sprite a schermo
             enemy.HitboxOffset = Vector2.Zero;
             enemy.HitboxSize = enemySprite.Size;
 
@@ -606,7 +600,7 @@ namespace Final_solo_project
             var sprite = new SpriteSheet(
                 hyperJumpTexture ?? pixel,
                 rows: 1,
-                columns: 4,               // ✅ 4 frame
+                columns: 4,               
                 topLeftPosition: Vector2.Zero,
                 size: new Vector2(w, h)
             );
@@ -646,7 +640,7 @@ namespace Final_solo_project
 
                     AudioManager.PlayIperJump();
 
-                    jb.TriggerBounceAnim();   // ✅ animazione SOLO al rimbalzo
+                    jb.TriggerBounceAnim();  
 
                     return;
                 }
@@ -953,7 +947,7 @@ namespace Final_solo_project
             int screenW = GameSetting.WindowWidth;
             int screenH = GameSetting.WindowHeight;
 
-            // ===== BASE (statica, sotto) =====
+            // ===== BASE =====
             spriteBatch.Draw(
                 backgroundBaseTexture,
                 destinationRectangle: new Rectangle(0, 0, screenW, screenH),
@@ -963,10 +957,8 @@ namespace Final_solo_project
             // ===== TILE RIPETUTE =====
             int tileH = backgroundTileTexture.Height;
 
-            // offset verticale basato sullo scroll
             float offsetY = backgroundScrollY % tileH;
 
-            // disegna abbastanza tile da coprire tutto lo schermo
             for (int y = -tileH; y < screenH + tileH; y += tileH)
             {
                 spriteBatch.Draw(
@@ -1012,7 +1004,6 @@ namespace Final_solo_project
 
             spriteBatch.DrawString(font, $"Time: {minutes:00}:{seconds:00}", new Vector2(10, 30), Color.White);
 
-            // ✅ Kills (se killScore è 250 per kill)
             spriteBatch.DrawString(font, $"Kills: {killScore / 250}", new Vector2(10, 50), Color.White);
 
             int totalScore = (int)score + killScore;

@@ -28,7 +28,6 @@ namespace Final_solo_project
             sb.DrawString(font, label, textPos, textColor, 0f, Vector2.Zero, textScale, SpriteEffects.None, 0f);
         }
 
-        // Comodo: ritorna la larghezza effettiva di un keycap per layout orizzontale
         public static float MeasureWidth(Vector2 size) => size.X;
     }
 }

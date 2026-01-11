@@ -50,15 +50,14 @@ namespace Final_solo_project
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // se vuoi, puoi tenere questi aggiornamenti viewport
             GameSetting.WindowWidth = GraphicsDevice.Viewport.Width;
             GameSetting.WindowHeight = GraphicsDevice.Viewport.Height;
             GameSetting.GraphicsDevice = GraphicsDevice;
 
-            // ✅ CARICA AUDIO QUI (una sola volta)
+            //AUDIO
             AudioManager.LoadContent(Content);
 
-            // ✅ carica content per le screen già create in Initialize
+            // content per le screen 
             GameSetting.StartScreen.LoadContent(Content);
             GameSetting.PlayScreen.LoadContent(Content);
             GameSetting.EndScreen.LoadContent(Content);
@@ -86,7 +85,7 @@ namespace Final_solo_project
 
             _spriteBatch.Begin();
 
-            GameSetting.ActiveScreen?.Draw(_spriteBatch); // ✅ evita crash se per sbaglio è null
+            GameSetting.ActiveScreen?.Draw(_spriteBatch);
 
             _spriteBatch.End();
 

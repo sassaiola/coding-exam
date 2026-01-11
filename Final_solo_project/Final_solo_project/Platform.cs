@@ -37,7 +37,7 @@ namespace Final_solo_project
 
         public virtual void OnPlayerLanding(Doodler doodler)
         {
-            // per ora vuoto — lo riempiranno le classi figlie
+
         }
         
 

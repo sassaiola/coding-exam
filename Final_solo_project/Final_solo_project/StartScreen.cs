@@ -41,7 +41,7 @@ namespace Final_solo_project
                 return;
             }
 
-            // Toggle SFX (opzionale)
+            // Toggle SFX 
             if (UserInput.IsNewKeyPress(Keys.Enter))
             {
                 AudioManager.SfxEnabled = !AudioManager.SfxEnabled;
@@ -65,7 +65,7 @@ namespace Final_solo_project
             DrawShadowText(sb, sub2, new Vector2(0, 300), centerX: true, scale: 2.0f, Color.White);
             DrawShadowText(sb, sub3, new Vector2(0, 350), centerX: true, scale: 1.9f, Color.White * 0.95f);
 
-            // ✅ scritta animata
+            //  scritta animata
             DrawPulsingText(sb, "PRESS SPACE TO PLAY", new Vector2(0, 450), centerX: true,
                 baseScale: 1.6f, ampScale: 0.08f, speed: 5.0f, baseAlpha: 0.85f);
         }
@@ -107,14 +107,13 @@ namespace Final_solo_project
         private string SanitizeForFont(string s)
         {
             if (string.IsNullOrEmpty(s)) return "";
-            // filtra caratteri “strani” che possono far crashare SpriteFont
-            // (teniamo ASCII base + lettere/numeri/spazi/punteggiatura comune)
+           
             System.Text.StringBuilder sb = new System.Text.StringBuilder(s.Length);
             foreach (char c in s)
             {
                 if (c == '\n' || c == '\r' || c == '\t') { sb.Append(' '); continue; }
                 if (c >= 32 && c <= 126) sb.Append(c);
-                else sb.Append(' '); // sostituisce unicode non supportati
+                else sb.Append(' '); 
             }
             return sb.ToString();
         }

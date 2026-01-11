@@ -29,7 +29,7 @@ namespace Final_solo_project
 
             top10 = LeaderboardManager.LoadTop10();
 
-            // Se l’ultima run entra in top 10 -> abilita input nome
+            // top 10 -> abilita input nome
             enteringName = GameSetting.LastScoreQualifiesTop10;
             nameBuffer = "";
 
@@ -38,7 +38,6 @@ namespace Final_solo_project
 
         public override void LoadContent(ContentManager content)
         {
-            // Usa lo stesso font che già carichi altrove
             font = content.Load<SpriteFont>("fonts/UIFont2");
 
             pixel = new Texture2D(GameSetting.GraphicsDevice, 1, 1);
@@ -173,6 +172,7 @@ namespace Final_solo_project
                 // ===== Controls =====
                 spriteBatch.DrawString(font, "PRESS ENTER TO PLAY AGAIN", new Vector2(30, 170), Color.White);
                 spriteBatch.DrawString(font, "PRESS SPACE FOR MAIN MENU", new Vector2(30, 200), Color.White);
+                spriteBatch.DrawString(font, "PRESS ESC TO QUIT THE GAME", new Vector2(30, 230), Color.White);
 
             }
 

@@ -21,7 +21,7 @@ namespace Final_solo_project
             HitboxOffset = Vector2.Zero;
             HitboxSize = visualization.Size;
 
-            Visualization.SpriteIndex = 0; // idle frame
+            Visualization.SpriteIndex = 0; 
         }
 
         public void SnapToPlatformTop()
@@ -44,7 +44,6 @@ namespace Final_solo_project
         {
             if (!IsActive) return;
 
-            // se la piattaforma si muove/ricicla, resta agganciato sopra
             SnapToPlatformTop();
 
             if (isBouncing)
@@ -57,7 +56,6 @@ namespace Final_solo_project
 
                     if (Visualization.SpriteIndex >= totalFrames)
                     {
-                        // fine one-shot: torna idle
                         Visualization.SpriteIndex = 0;
                         isBouncing = false;
                     }

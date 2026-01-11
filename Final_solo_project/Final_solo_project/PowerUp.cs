@@ -13,10 +13,9 @@ namespace Final_solo_project
         public PowerUp(SpriteSheet visualization)
             : base(visualization)
         {
-            Velocity = Vector2.Zero; // o quello che ti serve
+            Velocity = Vector2.Zero; 
         }
 
-        // eventuale Update/Draw/effetto sul doodler...
     }
 }
 

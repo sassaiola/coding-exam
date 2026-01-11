@@ -7,7 +7,7 @@
         public BreakablePlatform(SpriteSheet visualization)
             : base(visualization, PlatformType.Breakable)
         {
-            JumpMultiplier = 0.87f; // niente rimbalzo: cade            IsBroken = false;
+            JumpMultiplier = 0.87f; 
         }
 
         public void ConsumeBreakFlag()
@@ -26,7 +26,7 @@
             IsBroken = true;
             IsActive = false;
 
-            AudioManager.PlayBreakingPlatform(); // 🔊 crack
+            AudioManager.PlayBreakingPlatform(); // audio crack
         }
 
 

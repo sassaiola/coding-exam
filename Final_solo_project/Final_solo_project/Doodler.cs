@@ -31,7 +31,6 @@ namespace Final_solo_project
         {
             normalSprite = visualization;
 
-            // IMPORTANTISSIMO: Visualization resta SEMPRE la normal
             Visualization = normalSprite;
 
             Velocity = Vector2.Zero;
@@ -116,7 +115,7 @@ namespace Final_solo_project
             // Gravità
             Velocity = new Vector2(Velocity.X, Velocity.Y + 0.4f);
 
-            // Movimento + update (stabile perché Visualization è sempre normalSprite)
+            // Movimento + update 
             base.Update(gameTime);
 
             // Warp
@@ -125,7 +124,7 @@ namespace Final_solo_project
             else if (TopLeftPosition.X + Size.X < 0)
                 TopLeftPosition = new Vector2(GameSetting.WindowWidth, TopLeftPosition.Y);
 
-            // Sync SEMPRE entrambe le sheet
+            // Sync  entrambe le sheet
             normalSprite.TopLeftPosition = TopLeftPosition;
             if (attackSprite != null)
                 attackSprite.TopLeftPosition = TopLeftPosition;
