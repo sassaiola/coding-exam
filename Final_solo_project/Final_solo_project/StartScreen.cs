@@ -2,11 +2,13 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.XAudio2;
 using System;
 
 namespace Final_solo_project
 {
-    internal class StartScreen : Screen
+    internal class StartScreen : BaseScreen
+   
     {
         private SpriteFont font;
         private Texture2D pixel;
@@ -20,6 +22,8 @@ namespace Final_solo_project
 
         public override void LoadContent(ContentManager content)
         {
+            base.LoadContent(content);
+
             font = content.Load<SpriteFont>("fonts/UIFont2");
 
             pixel = new Texture2D(GameSetting.GraphicsDevice, 1, 1);
@@ -30,23 +34,26 @@ namespace Final_solo_project
 
         public override void Update(GameTime gameTime)
         {
+            UpdateKeyboard();
+
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
             t += dt;
 
             // START
-            if (UserInput.IsNewKeyPress(Keys.Space))
+            if (IsNewKeyPress(Keys.Space))
             {
                 GameSetting.ActiveScreen = GameSetting.PlayScreen;
                 GameSetting.ActiveScreen.Initialize();
                 return;
             }
 
-            // Toggle SFX 
-            if (UserInput.IsNewKeyPress(Keys.Enter))
+            // Toggle SFX
+            if (IsNewKeyPress(Keys.Enter))
             {
                 AudioManager.SfxEnabled = !AudioManager.SfxEnabled;
             }
         }
+
 
         public override void Draw(SpriteBatch sb)
         {

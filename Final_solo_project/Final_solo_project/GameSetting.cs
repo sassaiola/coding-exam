@@ -4,6 +4,11 @@ namespace Final_solo_project
 {
     internal static class GameSetting
     {
+        public static int CurrentScore { get; set; }
+
+        public static int ActiveBombs { get; set; }
+        public static int TotalBombs { get; set; }
+
         public static int WindowWidth { get; set; }
         public static int WindowHeight { get; set; }
         public static GraphicsDevice GraphicsDevice { get; set; }

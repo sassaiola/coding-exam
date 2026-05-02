@@ -18,7 +18,6 @@ namespace Final_solo_project
         public int CropX { get; set; } = 0;
         public int CropY { get; set; } = 0;
 
-
         private Rectangle[] _customSourceRects;
 
         public float Rotation { get; set; }
@@ -38,7 +37,6 @@ namespace Final_solo_project
             Size = size;
             SpriteIndex = 0;
         }
-
 
         private int ClampIndex(int idx)
         {
@@ -165,14 +163,12 @@ namespace Final_solo_project
 
                 Rectangle t = tight[i];
 
-                // centro del tight rect
                 int cx = t.X + t.Width / 2;
                 int cy = t.Y + t.Height / 2;
 
                 int x = cx - globalW / 2;
                 int y = cy - globalH / 2;
 
-                // clamp dentro frame
                 int minFrameX = fx;
                 int minFrameY = fy;
                 int maxFrameX = fx + frameW - globalW;
@@ -203,5 +199,3 @@ namespace Final_solo_project
         }
     }
 }
-
-

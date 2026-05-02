@@ -14,6 +14,7 @@
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/Audio/Sound_Trap.wav</File>
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/fonts/UIFont2.spritefont</File>
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/2.png</File>
+    <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/Bomb.png</File>
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/breakable_platform.png</File>
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/bullet_2.png</File>
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/bullet_3.png</File>
@@ -30,6 +31,7 @@
     <File>C:/Users/giorg/Desktop/CoDING/coding-exam/Final_solo_project/Final_solo_project/Content/SpriteSheetAnimation/Zorroverde.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

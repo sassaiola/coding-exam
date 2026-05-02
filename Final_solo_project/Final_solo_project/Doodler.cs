@@ -17,7 +17,6 @@ namespace Final_solo_project
 
         public override bool IsOutOfBounds => TopLeftPosition.Y > GameSetting.WindowHeight;
 
-        // ===== Attack =====
         private bool isAttacking;
         private float attackFrameTimer;
 
@@ -30,9 +29,7 @@ namespace Final_solo_project
         public Doodler(SpriteSheet visualization) : base(visualization)
         {
             normalSprite = visualization;
-
             Visualization = normalSprite;
-
             Velocity = Vector2.Zero;
         }
 
@@ -57,7 +54,6 @@ namespace Final_solo_project
 
         public void UpdateAnimation(GameTime gameTime)
         {
-            // ===== Attack one-shot =====
             if (isAttacking && attackSprite != null)
             {
                 attackFrameTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -77,7 +73,6 @@ namespace Final_solo_project
                 return;
             }
 
-            // ===== Animazione normale =====
             if (IsOnPlatform)
             {
                 platformAnimTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -91,17 +86,16 @@ namespace Final_solo_project
             }
             else if (Velocity.Y < 0)
             {
-                normalSprite.SpriteIndex = 3; // salita
+                normalSprite.SpriteIndex = 3;
             }
             else
             {
-                normalSprite.SpriteIndex = 0; // discesa
+                normalSprite.SpriteIndex = 0;
             }
         }
 
         public override void Update(GameTime gameTime)
         {
-            // Input orizzontale
             KeyboardState keyboard = Keyboard.GetState();
             float moveSpeed = 5f;
 
@@ -112,24 +106,19 @@ namespace Final_solo_project
             else
                 Velocity = new Vector2(0, Velocity.Y);
 
-            // Gravità
             Velocity = new Vector2(Velocity.X, Velocity.Y + 0.4f);
 
-            // Movimento + update 
             base.Update(gameTime);
 
-            // Warp
             if (TopLeftPosition.X > GameSetting.WindowWidth)
                 TopLeftPosition = new Vector2(-Size.X, TopLeftPosition.Y);
             else if (TopLeftPosition.X + Size.X < 0)
                 TopLeftPosition = new Vector2(GameSetting.WindowWidth, TopLeftPosition.Y);
 
-            // Sync  entrambe le sheet
             normalSprite.TopLeftPosition = TopLeftPosition;
             if (attackSprite != null)
                 attackSprite.TopLeftPosition = TopLeftPosition;
 
-            // Mantieni coerente anche Visualization (che è normalSprite)
             Visualization.TopLeftPosition = TopLeftPosition;
         }
 
@@ -137,7 +126,6 @@ namespace Final_solo_project
         {
             if (!IsActive) return;
 
-            // Disegna l’attack SOLO mentre attacca, altrimenti normale
             if (isAttacking && attackSprite != null)
                 attackSprite.Draw(spriteBatch);
             else

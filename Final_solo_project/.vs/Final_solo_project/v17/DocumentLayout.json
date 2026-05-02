@@ -7,48 +7,20 @@
       "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\screenplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\spritesheetanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\spritesheetanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\staticplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\staticplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\doublejumpplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\doublejumpplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\doodler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\doodler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\platformbomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\platformbomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\content\\content.mgcb||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\content\\content.mgcb||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\basescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\basescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\gamesetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,16 +31,92 @@
       "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\endscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\doodler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\doodler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\userinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\userinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\doublejumpplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\doublejumpplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\spritesheetanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\spritesheetanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\content\\content.mgcb||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\content\\content.mgcb||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\staticplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\staticplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\movingplastform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\movingplastform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\breakableplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\breakableplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\trap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\trap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\highscoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\highscoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\leaderboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\leaderboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\textdraw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\textdraw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\content\\fonts\\uifont2.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\content\\fonts\\uifont2.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\jumpboost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\jumpboost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|c:\\users\\giorg\\desktop\\coding\\coding-exam\\final_solo_project\\final_solo_project\\userinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{997510D4-E594-4D1C-AD1E-730CDCEAA24E}|Final_solo_project\\Final_solo_project.csproj|solutionrelative:final_solo_project\\userinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -88,7 +136,7 @@
               "RelativeDocumentMoniker": "Final_solo_project\\ScreenPlay.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\ScreenPlay.cs",
               "RelativeToolTip": "Final_solo_project\\ScreenPlay.cs",
-              "ViewState": "AgIAAPoAAAAAAAAAAAAkwP4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF8CAAAAAAAAAAAYwGACAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T12:56:50.808Z",
               "IsPinned": true,
@@ -96,105 +144,292 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "StartScreen.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\StartScreen.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\StartScreen.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\StartScreen.cs",
               "RelativeToolTip": "Final_solo_project\\StartScreen.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwBYAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:11:28.128Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 26,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Enemy.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\Enemy.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Enemy.cs",
               "RelativeToolTip": "Final_solo_project\\Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:22:49.904Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Bullet.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\Bullet.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Bullet.cs",
+              "RelativeToolTip": "Final_solo_project\\Bullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T16:04:41.102Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\AudioManager.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\AudioManager.cs",
+              "RelativeToolTip": "Final_solo_project\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-21T15:51:16.168Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "JumpBoost.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\JumpBoost.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\JumpBoost.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\JumpBoost.cs",
+              "RelativeToolTip": "Final_solo_project\\JumpBoost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T07:14:29.415Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "EndScreen.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\EndScreen.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\EndScreen.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\EndScreen.cs",
+              "RelativeToolTip": "Final_solo_project\\EndScreen.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T13:11:37.592Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "SpriteSheet.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\SpriteSheet.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\SpriteSheet.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\SpriteSheet.cs",
               "RelativeToolTip": "Final_solo_project\\SpriteSheet.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAywHIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAIwMkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T13:10:46.968Z"
+              "WhenOpened": "2025-12-04T13:10:46.968Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameObject.cs",
-              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameObject.cs",
-              "RelativeDocumentMoniker": "Final_solo_project\\GameObject.cs",
-              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameObject.cs",
-              "RelativeToolTip": "Final_solo_project\\GameObject.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwvzIAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BaseScreen.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\BaseScreen.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\BaseScreen.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\BaseScreen.cs",
+              "RelativeToolTip": "Final_solo_project\\BaseScreen.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwEgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T13:16:57.824Z"
+              "WhenOpened": "2026-01-12T08:07:29.343Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "PlatformBomb.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\PlatformBomb.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\PlatformBomb.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\PlatformBomb.cs",
+              "RelativeToolTip": "Final_solo_project\\PlatformBomb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:19:52.882Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UIFont2.spritefont",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Content\\fonts\\UIFont2.spritefont",
+              "RelativeDocumentMoniker": "Final_solo_project\\Content\\fonts\\UIFont2.spritefont",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Content\\fonts\\UIFont2.spritefont",
+              "RelativeToolTip": "Final_solo_project\\Content\\fonts\\UIFont2.spritefont",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-28T16:59:18.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TextDraw.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\TextDraw.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\TextDraw.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\TextDraw.cs",
+              "RelativeToolTip": "Final_solo_project\\TextDraw.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T11:08:52.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LeaderboardManager.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\LeaderboardManager.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\LeaderboardManager.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\LeaderboardManager.cs",
+              "RelativeToolTip": "Final_solo_project\\LeaderboardManager.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T06:53:31.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameSetting.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameSetting.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\GameSetting.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameSetting.cs",
+              "RelativeToolTip": "Final_solo_project\\GameSetting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T13:28:19.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Game1.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\Game1.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Game1.cs",
               "RelativeToolTip": "Final_solo_project\\Game1.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAgwBoAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAAGAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:28:07.441Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
+              "Title": "HighScoreManager.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\HighScoreManager.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\HighScoreManager.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\HighScoreManager.cs",
+              "RelativeToolTip": "Final_solo_project\\HighScoreManager.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T06:24:12.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameObject.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\GameObject.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameObject.cs",
+              "RelativeToolTip": "Final_solo_project\\GameObject.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAA8wGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T13:16:57.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Trap.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Trap.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\Trap.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Trap.cs",
+              "RelativeToolTip": "Final_solo_project\\Trap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T15:44:23.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Platform.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Platform.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\Platform.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Platform.cs",
+              "RelativeToolTip": "Final_solo_project\\Platform.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA5wCkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T13:11:11.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BreakablePlatform.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\BreakablePlatform.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\BreakablePlatform.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\BreakablePlatform.cs",
+              "RelativeToolTip": "Final_solo_project\\BreakablePlatform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T13:58:25.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MovingPlastform.cs",
+              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\MovingPlastform.cs",
+              "RelativeDocumentMoniker": "Final_solo_project\\MovingPlastform.cs",
+              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\MovingPlastform.cs",
+              "RelativeToolTip": "Final_solo_project\\MovingPlastform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T20:30:45.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "StaticPlatform.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\StaticPlatform.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\StaticPlatform.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\StaticPlatform.cs",
               "RelativeToolTip": "Final_solo_project\\StaticPlatform.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T16:51:14.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Content.mgcb",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Content\\Content.mgcb",
               "RelativeDocumentMoniker": "Final_solo_project\\Content\\Content.mgcb",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Content\\Content.mgcb",
               "RelativeToolTip": "Final_solo_project\\Content\\Content.mgcb",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-12-18T13:59:47.589Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "SpriteSheetAnimation.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\SpriteSheetAnimation.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\SpriteSheetAnimation.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\SpriteSheetAnimation.cs",
               "RelativeToolTip": "Final_solo_project\\SpriteSheetAnimation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:13:39.181Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "DoubleJumpPlatform.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\DoubleJumpPlatform.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\DoubleJumpPlatform.cs",
@@ -206,43 +441,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Doodler.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Doodler.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\Doodler.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Doodler.cs",
               "RelativeToolTip": "Final_solo_project\\Doodler.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAwwEIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAA0wIcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:10:59.136Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Platform.cs",
-              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Platform.cs",
-              "RelativeDocumentMoniker": "Final_solo_project\\Platform.cs",
-              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Platform.cs",
-              "RelativeToolTip": "Final_solo_project\\Platform.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T13:11:11.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GameSetting.cs",
-              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameSetting.cs",
-              "RelativeDocumentMoniker": "Final_solo_project\\GameSetting.cs",
-              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\GameSetting.cs",
-              "RelativeToolTip": "Final_solo_project\\GameSetting.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T13:28:19.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "PowerUp.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\PowerUp.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\PowerUp.cs",
@@ -254,19 +465,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "UserInput.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\UserInput.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\UserInput.cs",
               "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\UserInput.cs",
               "RelativeToolTip": "Final_solo_project\\UserInput.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:21:35.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "Screen.cs",
               "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\Screen.cs",
               "RelativeDocumentMoniker": "Final_solo_project\\Screen.cs",
@@ -275,18 +486,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T13:20:33.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EndScreen.cs",
-              "DocumentMoniker": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\EndScreen.cs",
-              "RelativeDocumentMoniker": "Final_solo_project\\EndScreen.cs",
-              "ToolTip": "C:\\Users\\giorg\\Desktop\\CoDING\\coding-exam\\Final_solo_project\\Final_solo_project\\EndScreen.cs",
-              "RelativeToolTip": "Final_solo_project\\EndScreen.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAkwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T13:11:37.592Z"
             }
           ]
         }

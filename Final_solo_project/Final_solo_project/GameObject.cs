@@ -1,16 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final_solo_project
 {
     internal abstract class GameObject
     {
-        public Vector2 TopLeftPosition {  get; set; }
+        public Vector2 TopLeftPosition { get; set; }
         public Vector2 Size { get; set; }
         public SpriteSheet Visualization { get; set; }
 
@@ -19,8 +14,8 @@ namespace Final_solo_project
         public Vector2 HitboxOffset { get; set; } = Vector2.Zero;
         public Vector2 HitboxSize { get; set; } = new Vector2(70, 85);
 
-
         public bool IsActive { get; set; }
+
         public virtual bool IsOutOfBounds
         {
             get
@@ -40,6 +35,7 @@ namespace Final_solo_project
                 return false;
             }
         }
+
         public bool IsCollidingWith(GameObject other)
         {
             Rectangle rect1 = new Rectangle(
@@ -58,9 +54,6 @@ namespace Final_solo_project
 
             return rect1.Intersects(rect2);
         }
-
-
-
 
         public GameObject(SpriteSheet visualization)
         {
@@ -81,20 +74,24 @@ namespace Final_solo_project
             TopLeftPosition += Velocity;
             Visualization.TopLeftPosition = TopLeftPosition;
         }
+
         public virtual void Update(GameTime gameTime)
         {
             if (!IsActive) return;
+
             MoveGameObject();
+
             if (IsOutOfBounds)
                 IsActive = false;
+
             Visualization.Update(gameTime);
         }
+
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-if(!IsActive) return;
-Visualization.Draw(spriteBatch);
-
+            if (!IsActive) return;
+            Visualization.Draw(spriteBatch);
         }
-
     }
 }
+

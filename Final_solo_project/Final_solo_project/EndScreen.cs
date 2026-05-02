@@ -7,10 +7,9 @@ using System.Collections.Generic;
 
 namespace Final_solo_project
 {
-    internal class EndScreen : Screen
+    internal class EndScreen : BaseScreen
     {
-        private SpriteFont font;
-        private Texture2D pixel;
+        
 
         private float titleTimer;
         private float pulse;
@@ -20,7 +19,7 @@ namespace Final_solo_project
         // Name entry
         private bool enteringName;
         private string nameBuffer = "";
-        private KeyboardState prevKb;
+
 
         public override void Initialize()
         {
@@ -33,64 +32,48 @@ namespace Final_solo_project
             enteringName = GameSetting.LastScoreQualifiesTop10;
             nameBuffer = "";
 
-            prevKb = Keyboard.GetState();
         }
 
-        public override void LoadContent(ContentManager content)
-        {
-            font = content.Load<SpriteFont>("fonts/UIFont2");
-
-            pixel = new Texture2D(GameSetting.GraphicsDevice, 1, 1);
-            pixel.SetData(new[] { Color.White });
-        }
+        
 
         public override void Update(GameTime gameTime)
         {
+            UpdateKeyboard();
+
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
             titleTimer += dt;
 
-            // semplice animazione "pulse"
             pulse = 0.85f + 0.15f * (float)Math.Sin(titleTimer * 3f);
-
-            var kb = Keyboard.GetState();
 
             if (enteringName)
             {
-                HandleNameEntry(kb);
+                HandleNameEntry();
             }
             else
             {
-                // ENTER = play again
-                if (IsNewKeyPress(kb, Keys.Enter))
+                if (IsNewKeyPress(Keys.Enter))
                 {
                     GameSetting.ActiveScreen = GameSetting.PlayScreen;
                     GameSetting.ActiveScreen.Initialize();
                     return;
                 }
 
-                // SPACE = back to main menu
-                if (IsNewKeyPress(kb, Keys.Space))
+                if (IsNewKeyPress(Keys.Space))
                 {
                     GameSetting.ActiveScreen = GameSetting.StartScreen;
                     GameSetting.ActiveScreen.Initialize();
                     return;
                 }
-
-                // ESC = exit (gestito da Game1, NON intercettare qui)
-
             }
-
-            prevKb = kb;
         }
 
-        private void HandleNameEntry(KeyboardState kb)
+
+        private void HandleNameEntry()
         {
-            // Backspace
-            if (IsNewKeyPress(kb, Keys.Back) && nameBuffer.Length > 0)
+            if (IsNewKeyPress(Keys.Back) && nameBuffer.Length > 0)
                 nameBuffer = nameBuffer.Substring(0, nameBuffer.Length - 1);
 
-            // Conferma
-            if (IsNewKeyPress(kb, Keys.Enter))
+            if (IsNewKeyPress(Keys.Enter))
             {
                 if (string.IsNullOrWhiteSpace(nameBuffer))
                     nameBuffer = "PLAYER";
@@ -102,32 +85,27 @@ namespace Final_solo_project
                 return;
             }
 
-            // A-Z
             for (Keys k = Keys.A; k <= Keys.Z; k++)
             {
-                if (IsNewKeyPress(kb, k) && nameBuffer.Length < 12)
+                if (IsNewKeyPress(k) && nameBuffer.Length < 12)
                     nameBuffer += k.ToString();
             }
 
-            // 0-9
             for (Keys k = Keys.D0; k <= Keys.D9; k++)
             {
-                if (IsNewKeyPress(kb, k) && nameBuffer.Length < 12)
+                if (IsNewKeyPress(k) && nameBuffer.Length < 12)
                     nameBuffer += (char)('0' + (k - Keys.D0));
             }
 
-            // Space, dash, underscore
-            if (IsNewKeyPress(kb, Keys.Space) && nameBuffer.Length < 12)
+            if (IsNewKeyPress(Keys.Space) && nameBuffer.Length < 12)
                 nameBuffer += " ";
 
-            if (IsNewKeyPress(kb, Keys.OemMinus) && nameBuffer.Length < 12)
+            if (IsNewKeyPress(Keys.OemMinus) && nameBuffer.Length < 12)
                 nameBuffer += "-";
-
-          
         }
 
-        private bool IsNewKeyPress(KeyboardState kb, Keys key)
-            => kb.IsKeyDown(key) && !prevKb.IsKeyDown(key);
+
+    
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -146,6 +124,10 @@ namespace Final_solo_project
             // ===== Score =====
             string scoreText = $"SCORE: {GameSetting.LastScore}";
             spriteBatch.DrawString(font, scoreText, new Vector2(30, 120), Color.White);
+
+            // ===== Bottom bar =====
+            DrawBottomBar(spriteBatch);
+
 
             // ===== Name entry prompt =====
             if (enteringName)

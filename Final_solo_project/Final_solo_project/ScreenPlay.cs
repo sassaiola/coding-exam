@@ -4,14 +4,16 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Final_solo_project
 {
-    internal class ScreenPlay : Screen
+    internal class ScreenPlay : BaseScreen
     {
+        private int totalBombsSpawned;
+
         private Doodler doodler;
         private List<PlatformBase> platforms;
-
         private SpriteFont font;
         private Texture2D pixel;
         private Texture2D doodlerTexture;
@@ -26,26 +28,27 @@ namespace Final_solo_project
         private Texture2D backgroundBaseTexture;
         private Texture2D backgroundTileTexture;
         private Texture2D hyperJumpTexture;
+        private Texture2D bombTexture;
+
+
+        private List<PlatformBomb> bombs;
+
+        private bool bombSpawnedThisLanding;
 
         private float backgroundScrollY;
-
-
-
-
         private readonly Random random = new Random();
 
         private float score;
         private float elapsedSeconds;
-
         private int debugCollisions;
-
         private float nextSpawnY;
-        private const float PlatformStepY = 80f;
+        private readonly Vector2 BombSize = new Vector2(32, 32);
 
+        private const float PlatformStepY = 80f;
         private const int PlatformWidth = 110;
         private const int PlatformHeight = 20;
-        private float difficulty01; // 0..1
 
+        private float difficulty01; // 0..1
         private const float MinGapY = 45f;
         private const float MaxGapEasy = 85f;
         private const float MaxGapHard = 125f;
@@ -61,19 +64,20 @@ namespace Final_solo_project
         private const float EnemyChance = 0.12f;
 
         private List<Bullet> bullets;
-
         private float shootCooldownTimer;
         private const float ShootCooldown = 0.18f;
 
         // ✅ Attack “pre-collision” contro enemy
-        private const float EnemyAttackPreTriggerPx = 20f;  
+        private const float EnemyAttackPreTriggerPx = 20f;
         private float enemyAttackCueCooldownTimer;
-        private const float EnemyAttackCueCooldown = 0.18f; 
+        private const float EnemyAttackCueCooldown = 0.18f;
 
         public override void Initialize()
         {
+
             score = 0f;
             elapsedSeconds = 0f;
+            totalBombsSpawned = 0;
 
             if (pixel == null) return;
 
@@ -82,8 +86,10 @@ namespace Final_solo_project
 
         public override void LoadContent(ContentManager content)
         {
+            base.LoadContent(content);
+
             doodlerTexture = content.Load<Texture2D>("SpriteSheetAnimation/Zorroverde");
-            enemyTexture = content.Load<Texture2D>("SpriteSheetAnimation/enemy"); 
+            enemyTexture = content.Load<Texture2D>("SpriteSheetAnimation/enemy");
             attackTexture = content.Load<Texture2D>("SpriteSheetAnimation/SpriteSheet_Attack");
             trapTexture = content.Load<Texture2D>("SpriteSheetAnimation/trap");
             platformBaseTexture = content.Load<Texture2D>("SpriteSheetAnimation/platform_base");
@@ -91,13 +97,10 @@ namespace Final_solo_project
             breakablePlatformTexture = content.Load<Texture2D>("SpriteSheetAnimation/breakable_platform");
             movingPlatformTexture = content.Load<Texture2D>("SpriteSheetAnimation/cloud_shape2_2");
             bulletTexture = content.Load<Texture2D>("SpriteSheetAnimation/bullet_4");
-
             hyperJumpTexture = content.Load<Texture2D>("SpriteSheetAnimation/hyperjump");
-
             backgroundBaseTexture = content.Load<Texture2D>("SpriteSheetAnimation/2");
             backgroundTileTexture = content.Load<Texture2D>("SpriteSheetAnimation/Upper_Sfondo");
-
-
+            bombTexture = content.Load<Texture2D>("SpriteSheetAnimation/Bomb");
 
 
             pixel = new Texture2D(GameSetting.GraphicsDevice, 1, 1);
@@ -110,6 +113,11 @@ namespace Final_solo_project
 
         private void ResetLevel()
         {
+
+            bombs = new List<PlatformBomb>();
+            GameSetting.ActiveBombs = 0;
+            GameSetting.TotalBombs = 0;
+
             platforms = new List<PlatformBase>();
             traps = new List<Trap>();
             jumpBoosts = new List<JumpBoost>();
@@ -120,7 +128,6 @@ namespace Final_solo_project
             shootCooldownTimer = 0f;
             enemyAttackCueCooldownTimer = 0f;
             backgroundScrollY = 0f;
-
 
             CreateDoodler();
             CreateStartPlatform();
@@ -193,9 +200,9 @@ namespace Final_solo_project
 
         private void CreateBullet()
         {
-            //  bullet size
-            float w = doodler.Size.X * 1.25f;   // puoi alzare/abbassare
-            float h = w * 0.5f;                // sottile (tunable)
+            // bullet size
+            float w = doodler.Size.X * 1.25f; // puoi alzare/abbassare
+            float h = w * 0.5f; // sottile (tunable)
 
             // spawn dal centro del doodler
             float x = doodler.TopLeftPosition.X + doodler.Size.X / 2f - w / 2f;
@@ -214,13 +221,12 @@ namespace Final_solo_project
 
             var b = new Bullet(bulletSprite, speedY: 16f);
 
-            //   hitbox size
+            // hitbox size
             b.HitboxOffset = Vector2.Zero;
             b.HitboxSize = bulletSprite.Size;
 
             bullets.Add(b);
         }
-
 
         private float GetHighestPlatformY()
         {
@@ -228,8 +234,7 @@ namespace Final_solo_project
             foreach (var p in platforms)
             {
                 if (!p.IsActive) continue;
-                if (p.TopLeftPosition.Y < highestY)
-                    highestY = p.TopLeftPosition.Y;
+                if (p.TopLeftPosition.Y < highestY) highestY = p.TopLeftPosition.Y;
             }
             return highestY;
         }
@@ -239,7 +244,9 @@ namespace Final_solo_project
             Texture2D tex = doodlerTexture ?? pixel;
 
             var doodlerSprite = new SpriteSheet(
-                tex, 1, 4,
+                tex,
+                1,
+                4,
                 new Vector2(GameSetting.WindowWidth / 2f, GameSetting.WindowHeight / 3f),
                 new Vector2(70, 85)
             );
@@ -253,26 +260,22 @@ namespace Final_solo_project
             if (attackTexture != null)
             {
                 var attackSheet = new SpriteSheet(
-     attackTexture,
-     rows: 1,
-     columns: 3,                 
-     topLeftPosition: doodler.TopLeftPosition,
-     size: doodler.Size
- );
+                    attackTexture,
+                    rows: 1,
+                    columns: 3,
+                    topLeftPosition: doodler.TopLeftPosition,
+                    size: doodler.Size
+                );
 
                 attackSheet.CropX = 0;
                 attackSheet.CropY = 0;
-
                 attackSheet.BuildNormalizedTightSourceRects(alphaThreshold: 10, padding: 1);
 
                 doodler.SetAttackSprite(attackSheet, totalFrames: 3);
 
-
                 attackSheet.CropX = 0;
                 attackSheet.CropY = 0;
-
                 doodler.SetAttackSprite(attackSheet, totalFrames: 3);
-
             }
         }
 
@@ -291,7 +294,6 @@ namespace Final_solo_project
 
             platforms.Add(new StaticPlatform(startPlatformSprite));
         }
-
 
         private void SpawnInitialPlatforms()
         {
@@ -324,14 +326,13 @@ namespace Final_solo_project
                 if (isMoving)
                 {
                     texToUse = movingPlatformTexture ?? platformBaseTexture ?? pixel;
-                    sizeToUse = new Vector2(190f, 46f); 
+                    sizeToUse = new Vector2(190f, 46f);
                 }
                 else if (isBreakable)
                 {
                     texToUse = breakablePlatformTexture ?? platformBaseTexture ?? pixel;
-                    sizeToUse = new Vector2(PlatformWidth, PlatformHeight); 
+                    sizeToUse = new Vector2(PlatformWidth, PlatformHeight);
                 }
-
 
                 // ricentra X se la size è più grande della base
                 x = MathHelper.Clamp(
@@ -379,10 +380,11 @@ namespace Final_solo_project
             }
         }
 
-
-
         public override void Update(GameTime gameTime)
         {
+            UpdateKeyboard();
+            bombSpawnedThisLanding = false;
+
             doodler.IsOnPlatform = false;
             debugCollisions = 0;
 
@@ -399,7 +401,6 @@ namespace Final_solo_project
             {
                 if (!platform.IsActive) continue;
                 platform.Update(gameTime);
-
             }
 
             foreach (var jb in jumpBoosts)
@@ -413,8 +414,6 @@ namespace Final_solo_project
                 if (!e.IsActive) continue;
                 e.Update(gameTime);
             }
-
-
 
             Rectangle prevDoodlerBox = GetHitbox(doodler);
 
@@ -433,17 +432,32 @@ namespace Final_solo_project
             HandleLanding(prevDoodlerBox, currDoodlerBox);
             HandleJumpBoostCollisions(prevDoodlerBox, currDoodlerBox);
 
-            // ✅ pre-trigger attack 
+            // ✅ pre-trigger attack
             CueAttackBeforeEnemyPass(prevDoodlerBox, currDoodlerBox);
 
             HandleEnemyCollisions(prevDoodlerBox, currDoodlerBox);
             HandleBulletEnemyCollisions();
-
             HandleTrapCollisions(prevDoodlerBox, currDoodlerBox);
+            for (int i = bombs.Count - 1; i >= 0; i--)
+            {
+                if (!bombs[i].IsActive)
+                {
+                    bombs.RemoveAt(i);
+                    continue;
+                }
+
+
+                bombs[i].Update(gameTime);
+
+                
+            }
+            HandleBombPlatformCollisions();
+
 
             ResolveMovingPlatformOverlaps();
             HandleScrollAndScore();
-            RecyclePlatforms(); 
+            RecyclePlatforms();
+
 
             if (!doodler.IsActive)
             {
@@ -457,9 +471,44 @@ namespace Final_solo_project
                 GameSetting.ActiveScreen.Initialize();
                 return;
             }
+            GameSetting.CurrentScore = (int)score + killScore;
 
             doodler.UpdateAnimation(gameTime);
         }
+
+
+        private void HandleBombPlatformCollisions()
+        {
+            foreach (var bomb in bombs)
+            {
+                if (!bomb.IsActive) continue;
+
+                Rectangle bombBox = GetHitbox(bomb);
+
+                foreach (var platform in platforms)
+                {
+                    if (!platform.IsActive) continue;
+
+                    // 🔑 ignora la piattaforma che ha spawnato la bomba
+                    if (platform == bomb.SourcePlatform)
+                        continue;
+
+                    Rectangle platBox = GetHitbox(platform);
+
+                    if (bombBox.Intersects(platBox))
+                    {
+                        platform.IsActive = false;
+                        AudioManager.PlayBreakingPlatform();
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
 
         private void CueAttackBeforeEnemyPass(Rectangle prev, Rectangle curr)
         {
@@ -473,16 +522,12 @@ namespace Final_solo_project
                 if (!e.IsActive) continue;
 
                 Rectangle eb = GetHitbox(e);
-
                 bool overlapX = curr.Right > eb.Left && curr.Left < eb.Right;
                 if (!overlapX) continue;
 
                 //entro 20px dal bottom del nemico (prima del contatto reale)
                 float triggerY = eb.Bottom + EnemyAttackPreTriggerPx;
-
-                bool crossedPreTrigger =
-                    prev.Top >= triggerY &&
-                    curr.Top <= triggerY;
+                bool crossedPreTrigger = prev.Top >= triggerY && curr.Top <= triggerY;
 
                 if (crossedPreTrigger)
                 {
@@ -498,6 +543,7 @@ namespace Final_solo_project
             foreach (var b in bullets)
             {
                 if (!b.IsActive) continue;
+
                 Rectangle bb = GetHitbox(b);
 
                 foreach (var e in enemies)
@@ -508,12 +554,10 @@ namespace Final_solo_project
                     {
                         b.IsActive = false;
                         e.IsActive = false;
-
                         killScore += e.KillScore;
 
                         //audio melee quando uccidi davvero
                         AudioManager.PlayEnemyKillTop();
-
                         break;
                     }
                 }
@@ -522,7 +566,7 @@ namespace Final_solo_project
 
         private void CreateEnemyAtY(float y)
         {
-            float w = 69f;  // dimensione a schermo 
+            float w = 69f; // dimensione a schermo
             float h = 69f;
 
             float x = FindNonOverlappingEnemyX(y, w, h);
@@ -568,10 +612,13 @@ namespace Final_solo_project
                 if (crossedPlatformTop && overlapX)
                 {
                     doodler.IsOnPlatform = true;
-                    debugCollisions++;
 
-                    float newTopLeftY = platBox.Top - doodler.HitboxSize.Y - doodler.HitboxOffset.Y;
-                    doodler.TopLeftPosition = new Vector2(doodler.TopLeftPosition.X, newTopLeftY);
+                    float newTopLeftY =
+                        platBox.Top - doodler.HitboxSize.Y - doodler.HitboxOffset.Y;
+
+                    doodler.TopLeftPosition =
+                        new Vector2(doodler.TopLeftPosition.X, newTopLeftY);
+
                     doodler.Visualization.TopLeftPosition = doodler.TopLeftPosition;
 
                     float jump = doodler.JumpSpeed * platform.JumpMultiplier;
@@ -579,28 +626,58 @@ namespace Final_solo_project
 
                     platform.OnPlayerLanding(doodler);
 
-                    if (platform is not BreakablePlatform)
+                    // 🔥 SPAWN BOMBA (UNA SOLA VOLTA PER LANDING)
+                    if (!bombSpawnedThisLanding)
                     {
-                        AudioManager.PlayJump();
+                        CreateBombFromPlatform(platform);
+                        bombSpawnedThisLanding = true;
                     }
+
+                    if (platform is not BreakablePlatform)
+                        AudioManager.PlayJump();
 
                     break;
                 }
             }
         }
 
+        
+
+        private void CreateBombFromPlatform(PlatformBase platform)
+        {
+            float w = 24f;
+            float h = 24f;
+
+            float x = platform.TopLeftPosition.X + (platform.Size.X - w) / 2f;
+            float y = platform.TopLeftPosition.Y - h - 2f;
+
+            var sprite = new SpriteSheet(
+                bombTexture,
+                1,
+                1,
+                new Vector2(x, y),
+                new Vector2(w, h)
+            );
+
+            var bomb = new PlatformBomb(sprite, platform);
+
+            bombs.Add(bomb);
+
+            GameSetting.ActiveBombs++;
+            totalBombsSpawned++;
+        }
+
+
+
         private void CreateJumpBoostOnPlatform(PlatformBase platform)
         {
             float w = platform.Size.X / 3f * 1.8f;
             float h = 22f * 1.8f;
 
-
-
-
             var sprite = new SpriteSheet(
                 hyperJumpTexture ?? pixel,
                 rows: 1,
-                columns: 4,               
+                columns: 4,
                 topLeftPosition: Vector2.Zero,
                 size: new Vector2(w, h)
             );
@@ -610,9 +687,9 @@ namespace Final_solo_project
 
             var boost = new JumpBoost(sprite, platform);
             boost.SnapToPlatformTop();
+
             jumpBoosts.Add(boost);
         }
-
 
         private void HandleJumpBoostCollisions(Rectangle prev, Rectangle curr)
         {
@@ -639,12 +716,9 @@ namespace Final_solo_project
                     doodler.Velocity = new Vector2(doodler.Velocity.X, -boostedJump);
 
                     AudioManager.PlayIperJump();
-
-                    jb.TriggerBounceAnim();  
-
+                    jb.TriggerBounceAnim();
                     return;
                 }
-
             }
         }
 
@@ -655,6 +729,7 @@ namespace Final_solo_project
                 if (!e.IsActive) continue;
 
                 Rectangle eb = GetHitbox(e);
+
                 bool overlapX = curr.Right > eb.Left && curr.Left < eb.Right;
 
                 bool movingUp = curr.Top < prev.Top;
@@ -735,8 +810,6 @@ namespace Final_solo_project
                 float delta = scrollThreshold - doodler.TopLeftPosition.Y;
 
                 backgroundScrollY -= delta;
-
-
                 score += delta;
 
                 doodler.TopLeftPosition = new Vector2(doodler.TopLeftPosition.X, scrollThreshold);
@@ -763,13 +836,26 @@ namespace Final_solo_project
                 foreach (var e in enemies)
                 {
                     if (!e.IsActive) continue;
+
                     e.TopLeftPosition = new Vector2(e.TopLeftPosition.X, e.TopLeftPosition.Y + delta);
                     e.Visualization.TopLeftPosition = e.TopLeftPosition;
+                }
+                foreach (var bomb in bombs)
+                {
+                    if (!bomb.IsActive) continue;
+
+                    bomb.TopLeftPosition = new Vector2(
+                        bomb.TopLeftPosition.X,
+                        bomb.TopLeftPosition.Y + delta
+                    );
+
+                    bomb.Visualization.TopLeftPosition = bomb.TopLeftPosition;
                 }
 
                 foreach (var b in bullets)
                 {
                     if (!b.IsActive) continue;
+
                     b.TopLeftPosition = new Vector2(b.TopLeftPosition.X, b.TopLeftPosition.Y + delta);
                     b.Visualization.TopLeftPosition = b.TopLeftPosition;
                 }
@@ -786,8 +872,8 @@ namespace Final_solo_project
 
                     difficulty01 = MathHelper.Clamp(score / 3000f, 0f, 1f);
                     float maxGap = MathHelper.Lerp(MaxGapEasy, MaxGapHard, difficulty01);
-
                     float gap = (float)(MinGapY + random.NextDouble() * (maxGap - MinGapY));
+
                     float newY = highestY - gap;
 
                     float newX = FindNonOverlappingX(
@@ -799,11 +885,10 @@ namespace Final_solo_project
                     );
 
                     p.HasAttachment = false;
-
                     p.TopLeftPosition = new Vector2(newX, newY);
                     p.Visualization.TopLeftPosition = p.TopLeftPosition;
-
                     p.IsActive = true;
+
                     if (p is BreakablePlatform bp) bp.Repair();
 
                     foreach (var trap in traps)
@@ -835,8 +920,7 @@ namespace Final_solo_project
                     foreach (var e in enemies)
                     {
                         if (!e.IsActive) continue;
-                        if (e.TopLeftPosition.Y > GameSetting.WindowHeight)
-                            e.IsActive = false;
+                        if (e.TopLeftPosition.Y > GameSetting.WindowHeight) e.IsActive = false;
                     }
                 }
             }
@@ -867,9 +951,9 @@ namespace Final_solo_project
                 if (!p.IsActive) continue;
 
                 var r = GetPlatformRect(p, padding: 8);
-                if (candidate.Intersects(r))
-                    return false;
+                if (candidate.Intersects(r)) return false;
             }
+
             return true;
         }
 
@@ -907,13 +991,13 @@ namespace Final_solo_project
             );
 
             var trap = new Trap(trapSprite, platform);
+
             trap.HitboxOffset = Vector2.Zero;
             trap.HitboxSize = trap.Size;
 
             trap.SnapToPlatformTop();
             traps.Add(trap);
         }
-
 
         private void HandleTrapCollisions(Rectangle prevDoodlerBox, Rectangle currDoodlerBox)
         {
@@ -956,7 +1040,6 @@ namespace Final_solo_project
 
             // ===== TILE RIPETUTE =====
             int tileH = backgroundTileTexture.Height;
-
             float offsetY = backgroundScrollY % tileH;
 
             for (int y = -tileH; y < screenH + tileH; y += tileH)
@@ -968,6 +1051,7 @@ namespace Final_solo_project
                 );
             }
         }
+
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -995,6 +1079,9 @@ namespace Final_solo_project
             foreach (var t in traps)
                 if (t.IsActive)
                     t.Draw(spriteBatch);
+            foreach (var bomb in bombs)
+                if (bomb.IsActive)
+                    bomb.Draw(spriteBatch);
 
             // HUD
             // UI
@@ -1003,14 +1090,57 @@ namespace Final_solo_project
             int seconds = totalSeconds % 60;
 
             spriteBatch.DrawString(font, $"Time: {minutes:00}:{seconds:00}", new Vector2(10, 30), Color.White);
-
             spriteBatch.DrawString(font, $"Kills: {killScore / 250}", new Vector2(10, 50), Color.White);
+            int activeBombs = bombs.Count(b => b.IsActive);
 
-            int totalScore = (int)score + killScore;
-            spriteBatch.DrawString(font, $"Score: {totalScore}", new Vector2(10, 10), Color.White);
+            DrawBottomBar(spriteBatch);
+
 
         }
+        private void DrawBottomBar(SpriteBatch spriteBatch)
+        {
+            int barHeight = 42;
+            int y = GameSetting.WindowHeight - barHeight;
 
+            // background
+            spriteBatch.Draw(
+                pixel,
+                new Rectangle(0, y, GameSetting.WindowWidth, barHeight),
+                new Color(0, 0, 0, 160)
+            );
+
+            // ORA REALE
+            string timeText = DateTime.Now.ToString("HH:mm:ss");
+            spriteBatch.DrawString(
+                font,
+                timeText,
+                new Vector2(12, y + 8),
+                Color.Red
+            );
+
+            // BOMBS
+            int activeBombs = bombs.Count(b => b.IsActive);
+            string bombsText = $"Bombs: {activeBombs}/{totalBombsSpawned}";
+            Vector2 bombsSize = font.MeasureString(bombsText);
+
+            spriteBatch.DrawString(
+                font,
+                bombsText,
+                new Vector2((GameSetting.WindowWidth - bombsSize.X) / 2f, y + 8),
+                Color.Red
+            );
+
+            // SCORE
+            string scoreText = $"Score: {(int)score}";
+            Vector2 scoreSize = font.MeasureString(scoreText);
+
+            spriteBatch.DrawString(
+                font,
+                scoreText,
+                new Vector2(GameSetting.WindowWidth - scoreSize.X - 12, y + 8),
+                Color.Red
+            );
+        }
 
     }
 }
